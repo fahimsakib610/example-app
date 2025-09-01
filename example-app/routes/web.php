@@ -1,32 +1,29 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controller\UserController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\StudentController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/homepage', function () {
-    return view('homepage');
-});
-
-// Route::get('/', Use[UserController::class, 'index']);
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [UserController::class, 'index']);
 // Route::get('/homepage', function () {
 //     return view('homepage');
 // });
 
-// Route::view('/homepage', 'homepage');
+Route::view('/homepage', 'homepage', ['title' => 'Homepage'])->name('hp');
 
-// // Route::get('/greeting', function () {
-// //     return 'Hello World';
-// // }
+Route::get('/greeting', function () {
+    return 'Hello World';
+});
 
-// Route::get('/user/{id}/{name}', function (string $id, string $name) {
-//     // return 'User '.$id. 'Name '.$name;
-//     return view('userpage', ['id' => $id, 'name' => $name]);
-// })->where('name', '[A-Za-z]+');
-
+// Route::redirect('/', '/homepage');
+Route::get('/user/{id}/{name?}', function (string $id,string $name = null) {
+    // return 'User '.$id.'Name '.$name;
+    return view('userpage',['id' => $id, 'name' => $name]);
+})->whereNumber('id')->whereAlpha('name');
 
 Route::prefix('blog')->group(function () {
     Route::get('/view', function () {
@@ -41,26 +38,24 @@ Route::prefix('blog')->group(function () {
     Route::get('/delete', function () {
         return 'This is the blog delete page';
     });
-    Route::get('/fallback', function () {
-        return 'This is the blog fallback page';
-    });
 });
 
+Route::fallback(function () {
+    return 'This is a fallback route';
+});
+
+// Route::redirect('old url', 'new url');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
 
-
 Route::get('/feature', function () {
     return view('feature');
 });
 
-Route::get('/alpha', function () {
-    return view('alpha');
-});
-
-
-Route::get('/bravo', function () {
-    return view('bravo');
-});
+Route::get('/student', [StudentController::class, 'index']);
+//Route::resource('photo', PhotoController::class);
+Route::get('/getcourse', [StudentController::class, 'getcoursedetails']);
+Route::get('/student/create', [StudentController::class, 'create'])->name('student.create');
+Route::post('/student/store', [StudentController::class, 'store'])->name('student.store');
