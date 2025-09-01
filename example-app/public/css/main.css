@@ -1,0 +1,175 @@
+/* main.css */
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #00809D;
+    color: #333;
+    padding: 20px;
+}
+
+/* Navbar Customization */
+.navbar {
+    background-color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+    color: #386641 !important;
+}
+
+.nav-link {
+    color: #555 !important;
+    transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-item.active .nav-link {
+    color: #386641 !important;
+}
+
+/* Dropdown */
+.dropdown-menu {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Jumbotron Customization */
+.jumbotron {
+    background-color: #F97A00;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.1);
+}
+
+.jumbotron .btn-primary {
+    background-color: #386641;
+    border: none;
+    transition: background-color 0.3s;
+    align-content: center;
+    
+}
+
+.jumbotron .button {
+    align-items: center;
+}
+
+.jumbotron .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styling */
+form {
+    margin-top: 30px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Submit Button */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Pagination Styling */
+.pagination {
+    margin-top: 40px;
+    justify-content: center;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.page-link {
+    color: #007bff;
+}
+
+.page-link:hover {
+    background-color: #e9f5ff;
+    border-color: #dee2e6;
+}
+
+
+
+
+
+
+/* main.css */
+
+/* General container styling for layout */
+.col {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Card Styling */
+.card {
+    width: 18rem;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #FED16A;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Body */
+.card-body {
+    padding: 1.25rem;
+}
+
+/* Title & Subtitle */
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #386641;
+}
+
+.card-subtitle {
+    font-size: 0.95rem;
+    color: #1aab10;
+}
+
+/* Text */
+.card-text {
+    font-size: 0.95rem;
+    color: #040404;
+    margin-top: 10px;
+}
+
+/* Links */
+.card-link {
+    display: inline-block;
+    color: #007bff;
+    margin-right: 10px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.card-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
